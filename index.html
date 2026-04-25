@@ -15,11 +15,11 @@
 
 body{
     min-height:100vh;
-    overflow-y:scroll;
+    overflow-y:auto;
     overflow-x:hidden;
     background: linear-gradient(135deg,#ff4d6d,#ff8fab,#ffc2d1);
     position:relative;
-    padding:30px 15px;
+    padding:20px;
 }
 
 /* corazones laterales */
@@ -48,14 +48,14 @@ body{
     }
 }
 
-/* carta */
+/* contenedor principal */
 .container{
-    width:90%;
-    max-width:700px;
-    margin:50px auto;
-    background: rgba(255,255,255,0.2);
-    backdrop-filter: blur(15px);
-    padding:30px;
+    width:95%;
+    max-width:900px;
+    margin:40px auto;
+    background: rgba(255,255,255,0.18);
+    backdrop-filter: blur(12px);
+    padding:25px;
     border-radius:25px;
     text-align:center;
     color:white;
@@ -69,6 +69,7 @@ h1{
     margin-bottom:20px;
 }
 
+/* botón */
 button{
     padding:15px 30px;
     font-size:1.1rem;
@@ -85,20 +86,46 @@ button:hover{
     transform:scale(1.1);
 }
 
+/* texto */
 #texto{
     margin-top:20px;
-    font-size:1.2rem;
-    line-height:1.8;
+    font-size:1.1rem;
+    line-height:1.7;
     white-space:pre-line;
+    text-align:center;
+    word-wrap:break-word;
+}
+
+/* responsive */
+@media (max-width:600px){
+    h1{
+        font-size:1.7rem;
+    }
+
+    #texto{
+        font-size:1rem;
+        line-height:1.6;
+    }
+
+    .heart{
+        font-size:40px;
+    }
+
+    .container{
+        width:92%;
+        padding:20px;
+    }
 }
 </style>
 </head>
 <body>
 
+<!-- corazones izquierda -->
 <div class="heart left1">❤️</div>
 <div class="heart left2">💖</div>
 <div class="heart left3">💕</div>
 
+<!-- corazones derecha -->
 <div class="heart right1">❤️</div>
 <div class="heart right2">💖</div>
 <div class="heart right3">💕</div>
@@ -114,30 +141,28 @@ button:hover{
 <script>
 const mensaje = `Fátima, quiero decirte algo muy claro y muy en serio.
 
-Yo no soy como ese pendejo que te falló y te fue infiel, porque jamás haría algo así contigo. La infidelidad no demuestra amor, demuestra falta de respeto.
+Yo no soy como ese pendejo que te falló y te fue infiel, porque jamás haría algo así contigo. La infidelidad no es amor, es falta de respeto y yo nunca quiero ser alguien que te cause ese dolor.
 
-Si estoy contigo es porque te quiero de verdad y porque jamás jugaría contigo.
+Si estoy contigo es porque te quiero de verdad y porque valoro cada momento contigo. No quiero jugar con tus sentimientos.
 
-Te prometo lealtad.
-Te prometo respeto.
-Te prometo sinceridad.
-Y te prometo amor real.
+Te prometo lealtad, respeto, sinceridad y amor real todos los días.
 
 No quiero ser una herida más en tu historia...
 quiero ser alguien que te haga sentir segura, amada y feliz.
 
-Mi corazón siempre te va a elegir a ti ❤️`;
+Y recuerda esto:
+mi corazón siempre te va a elegir a ti ❤️`;
 
 let i = 0;
 
 function mostrarTexto(){
-    document.querySelector("button").style.display="none";
+    document.querySelector("button").style.display = "none";
 
     function escribir(){
         if(i < mensaje.length){
             document.getElementById("texto").innerHTML += mensaje.charAt(i);
             i++;
-            setTimeout(escribir,40);
+            setTimeout(escribir, 35);
         }
     }
 
