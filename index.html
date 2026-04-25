@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Para Fátima ❤️</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: 'Georgia', serif;
+}
+
+body{
+    height:100vh;
+    overflow:hidden;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background: linear-gradient(135deg, #ff4d6d, #ff8fab, #ffc2d1);
+    position:relative;
+}
+
+/* Corazones laterales */
+.heart{
+    position:absolute;
+    font-size:55px;
+    color:rgba(255,255,255,0.8);
+    animation: float 4s ease-in-out infinite;
+}
+
+.left1{left:20px; top:15%;}
+.left2{left:40px; top:45%; animation-delay:1s;}
+.left3{left:25px; top:75%; animation-delay:2s;}
+
+.right1{right:20px; top:20%;}
+.right2{right:35px; top:50%; animation-delay:1.5s;}
+.right3{right:20px; top:78%; animation-delay:2.5s;}
+
+@keyframes float{
+    0%,100%{
+        transform:translateY(0px);
+    }
+    50%{
+        transform:translateY(-20px);
+    }
+}
+
+/* Carta */
+.container{
+    width:85%;
+    max-width:700px;
+    background: rgba(255,255,255,0.2);
+    backdrop-filter: blur(12px);
+    padding:30px;
+    border-radius:25px;
+    text-align:center;
+    color:white;
+    box-shadow:0 8px 30px rgba(0,0,0,0.2);
+}
+
+h1{
+    font-size:2rem;
+    margin-bottom:20px;
+}
+
+button{
+    padding:15px 30px;
+    font-size:1.1rem;
+    border:none;
+    border-radius:30px;
+    background:white;
+    color:#ff4d6d;
+    cursor:pointer;
+    font-weight:bold;
+    transition:0.3s;
+}
+
+button:hover{
+    transform:scale(1.1);
+}
+
+#texto{
+    margin-top:20px;
+    font-size:1.2rem;
+    line-height:1.8;
+    white-space:pre-line;
+}
+</style>
+</head>
+<body>
+
+<!-- corazones -->
+<div class="heart left1">❤️</div>
+<div class="heart left2">💖</div>
+<div class="heart left3">💕</div>
+
+<div class="heart right1">❤️</div>
+<div class="heart right2">💖</div>
+<div class="heart right3">💕</div>
+
+<div class="container">
+    <h1>Para Fátima ❤️</h1>
+    
+    <button onclick="mostrarTexto()">Presiona aquí mi amor</button>
+    
+    <div id="texto"></div>
+</div>
+
+<script>
+const mensaje = `Fátima, quiero decirte algo muy claro y muy en serio.
+
+Yo no soy como ese pendejo que te falló y te fue infiel, porque jamás haría algo así contigo. La infidelidad no es amor, es falta de respeto, y yo nunca quiero ser alguien que te cause ese dolor.
+
+Si estoy contigo es porque te quiero de verdad y porque valoro cada momento contigo. No quiero jugar con tus sentimientos.
+
+Te prometo lealtad, respeto, sinceridad y amor real todos los días.
+
+Y recuerda esto:
+mi corazón siempre te va a elegir a ti. ❤️`;
+
+let i = 0;
+
+function mostrarTexto(){
+    document.querySelector("button").style.display="none";
+    
+    function escribir(){
+        if(i < mensaje.length){
+            document.getElementById("texto").innerHTML += mensaje.charAt(i);
+            i++;
+            setTimeout(escribir, 40);
+        }
+    }
+    
+    escribir();
+}
+</script>
+
+</body>
+</html>
